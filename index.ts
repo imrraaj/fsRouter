@@ -1,7 +1,7 @@
 import express from "express";
 import fsRouter from "./router";
-const app = express();
 
+const app = express();
 fsRouter(app);
 
 app.get("/", (req, res) => { res.send("hi") });
