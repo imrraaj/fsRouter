@@ -1,8 +1,9 @@
 import express from "express";
-import fsRouter from "./router";
+import { FSRouter } from "./router";
 
 const app = express();
-fsRouter(app);
+const router = new FSRouter(app)
+router.useFileSystemRouting();
 
 app.get("/", (req, res) => { res.send("hi") });
 app.listen(3000, () => { console.log("Server Started") })
